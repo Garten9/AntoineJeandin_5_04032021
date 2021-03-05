@@ -1,0 +1,19 @@
+{
+  "name": "projet-5",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Garten9/AntoineJeandin_5_04032021.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Garten9/AntoineJeandin_5_04032021/issues"
+  },
+  "homepage": "https://github.com/Garten9/AntoineJeandin_5_04032021#readme"
+}
