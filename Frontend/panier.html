@@ -38,9 +38,33 @@
         </div>
 
     </header>
-    <div class="container">
-        <div class="row d-flex flex-wrap justify-content-around" id="produits">
+    <div class="container" id="content">
+        <div class="row">
+            <a class="btn btn-primary my-3" href="index.html">Continuer mes achats</a>
+        </div>
+        <div class="row">
+            <table class="table col-10">
+                <thead class="thead-light">
+                    <tr>
+                        <th scope="col">Désignation</th>
+                        <th scope="col">Prix unitaire</th>
+                        <th scope="col">Quantité</th>
+                        <th scope="col">Prix Total</th>
+                    </tr>
+                </thead>
+                <tbody id="panier">
+                </tbody>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td class="table-active" id="totalPrice"></td>
+                </tr>
 
+            </table>
+        </div>
+        <div class="row">
+            <button class="btn btn-primary my-3" id="resetPanier">Vider le panier</button>
         </div>
     </div>
 
@@ -58,8 +82,9 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
+
     <script type="text/javascript" src="main.js"></script>
-    <script type="text/javascript" src="index.js"></script>
+    <script type="text/javascript" src="panier.js"></script>
 
 </body>
 

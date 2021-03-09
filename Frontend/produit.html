@@ -27,9 +27,9 @@
                             <li class="nav-item active">
                                 <a class="nav-link" href="index.html">Les produits</a>
                             </li>
-                            <li class="nav-item">
+                            <li class="nav-item d-flex">
                                 <a class="nav-link" href="panier.html">Mon panier</a>
-                                <p id="quantityPanier"></p>
+                                <p class="bg-secondary" id="quantityPanier"></p>
                             </li>
                         </ul>
                     </div>
@@ -38,9 +38,39 @@
         </div>
 
     </header>
-    <div class="container">
-        <div class="row d-flex flex-wrap justify-content-around" id="produits">
 
+    <div class="container">
+        <div class="row">
+            <a class="btn btn-primary my-3" href="index.html">Retour aux produits</a>
+        </div>
+        <div class="row mt-3" id="produit">
+            <img class="col-5" id="teddyImg" src="" alt="">
+            <div class="col-7">
+                <div class="row">
+                    <h1 id="teddyName"></h1>
+                </div>
+                <div class="row">
+                    <p id="teddyPrice"></p>
+                </div>
+                <div class="row">
+                    <p id="teddyDescription"></p>
+                </div>
+                <div class="form-group row w-25">
+                    <label for="colors">Couleur</label>
+                    <select class="form-control" name="colors" id="colors"></select>
+                </div>
+                <div class="row">
+                    <button class="btn btn-primary" id="addPanier">Ajouter au panier</button>
+                </div>
+                <!-- <div class="row alert alert-success d-none my-3" id="alert" role="alert">
+                    Ce produit a été ajouté au <a href="panier.html" class="alert-link"> panier</a>.
+                </div> -->
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4 offset-5 alert alert-success my-2 d-none" id="alert" role="alert">
+                <p class="m-0">Ce produit a été ajouté au <a href="panier.html" class="alert-link"> panier</a>.</p>
+            </div>
         </div>
     </div>
 
@@ -58,8 +88,9 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
+
     <script type="text/javascript" src="main.js"></script>
-    <script type="text/javascript" src="index.js"></script>
+    <script type="text/javascript" src="produit.js"></script>
 
 </body>
 
