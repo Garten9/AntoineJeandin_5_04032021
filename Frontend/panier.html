@@ -42,29 +42,76 @@
         <div class="row">
             <a class="btn btn-primary my-3" href="index.html">Continuer mes achats</a>
         </div>
-        <div class="row">
-            <table class="table col-10">
-                <thead class="thead-light">
-                    <tr>
-                        <th scope="col">Désignation</th>
-                        <th scope="col">Prix unitaire</th>
-                        <th scope="col">Quantité</th>
-                        <th scope="col">Prix Total</th>
-                    </tr>
-                </thead>
-                <tbody id="panier">
-                </tbody>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td class="table-active" id="totalPrice"></td>
-                </tr>
-
-            </table>
+        <div class="row d-none" id="emptyPanier">
+            <p class="h2">Votre panier est vide !</p>
         </div>
-        <div class="row">
-            <button class="btn btn-primary my-3" id="resetPanier">Vider le panier</button>
+        <div class="row" id="filledPanier">
+            <div class="col-12 col-lg-7">
+                <h2 class="row">Panier</h2>
+                <table class="table">
+                    <thead class="thead-light">
+                        <tr>
+                            <th scope="col">Désignation</th>
+                            <th scope="col">Prix unitaire</th>
+                            <th scope="col">Quantité</th>
+                            <th scope="col">Prix Total</th>
+                        </tr>
+                    </thead>
+                    <tbody id="panier">
+                    </tbody>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="table-active font-weight-bold" id="totalPrice"></td>
+                    </tr>
+                </table>
+                <div class="row">
+                    <button class="btn btn-primary my-3" id="resetPanier">Vider le panier</button>
+                </div>
+            </div>
+            <div class="col-12 col-lg-5">
+                <h2>Formulaire de commande</h2>
+                <form action="" method="post" class="needs-validation" novalidate id="form">
+                    <div class="form-group">
+                        <label for="firstName">Prénom</label>
+                        <input id="firstName" class="form-control" type="text" name="firstName" required pattern="[A-Za-z\- éèêïàô]{2,}">
+                        <div class="invalid-feedback">
+                            Veuillez renseigner votre prénom
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Nom</label>
+                        <input id="lastName" class="form-control" type="text" name="lastName" required pattern="[A-Za-z\- 'éèêïàô]{2,}">
+                        <div class="invalid-feedback">
+                            Veuillez renseigner votre nom
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Adresse</label>
+                        <input id="address" class="form-control" type="text" name="address" required pattern="[0-9A-Za-z\- 'éèêïàô]{2,}">
+                        <div class="invalid-feedback">
+                            Veuillez renseigner votre adresse
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="city">Ville</label>
+                        <input id="city" class="form-control" type="text" name="city" required pattern="[A-Za-z\- 'éèêïàô]{2,}">
+                        <div class="invalid-feedback">
+                            Veuillez renseigner votre ville
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Adresse e-mail</label>
+                        <input id="email" class="form-control" type="email" name="email" required pattern="[a-z0-9._-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+                        <div class="invalid-feedback">
+                            Veuillez renseigner une adresse e-mail valide
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary mb-3" id="submit">Passer la commande</button>
+                </form>
+            </div>
+
         </div>
     </div>
 

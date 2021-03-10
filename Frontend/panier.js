@@ -2,21 +2,6 @@ let panier = document.querySelector('#panier');
 let totalPrice = 0;
 
 
-// const getProduit = (idTeddy) => {
-//     return new Promise((resolve, reject) => {
-//         var request = new XMLHttpRequest();
-//         request.onload = function () {
-//             if (this.readyState == XMLHttpRequest.DONE && this.status == 200) {
-//                 resolve(JSON.parse(this.responseText));
-//             } else {
-//                 reject(Error(this.statusText));
-//             }
-//         };
-//         request.open("GET", "http://localhost:3000/api/teddies/" + idTeddy + "");
-//         request.send();
-//     });
-// };
-
 function printPanier(teddy) {
     let panierRow = document.createElement('tr');
     panier.appendChild(panierRow);
@@ -30,7 +15,6 @@ function getPanier() {
         getProduit(localStorage.key(i))
             .then(function (data) {
                 printPanier(data);
-                console.log(data);
                 document.querySelector('#totalPrice').textContent = totalPrice + ' €';
             })
             .catch(function (err) {
@@ -40,6 +24,15 @@ function getPanier() {
     }
 }
 
+let emptyPanier = document.querySelector('#emptyPanier');
+let filledPanier = document.querySelector('#filledPanier');
+if (localStorage.length == 0){
+    emptyPanier.classList.remove('d-none');
+    filledPanier.classList.add('d-none');
+}else{
+    filledPanier.classList.remove('d-none');
+    emptyPanier.classList.add('d-none');
+}
 getPanier();
 
 
@@ -48,3 +41,46 @@ resetBtn.addEventListener('click', function () {
     localStorage.clear();
     document.location.href = 'panier.html';
 });
+
+function getProductArray(){
+    let productArray = [];
+    let i=0;
+    while (localStorage.key(i)){
+        for (let j = 1; j <= localStorage.getItem(localStorage.key(i)); j++){
+            productArray.push(localStorage.key(i));
+        }
+        i++;
+    }
+    return productArray;
+}
+
+function envoiFormulaire(){
+    let contact = {
+        firstName: document.getElementById("firstName").value,
+        lastName: document.getElementById("lastName").value,
+        address: document.getElementById("address").value,
+        city: document.getElementById("city").value,
+        email: document.getElementById("email").value
+    }
+    let productArray = getProductArray();
+    console.log(contact);
+    console.log(productArray);
+}
+
+
+let form = document.querySelector('#form');
+form.addEventListener('submit', function (event) {
+    event.preventDefault();
+    event.stopPropagation();
+    if (event.target.checkValidity() === true) {
+        envoiFormulaire();
+    }
+    event.target.classList.add('was-validated');
+});
+
+// let submit = document.querySelector('#submit');
+// submit.addEventListener('click', function(event){
+//     event.preventDefault();
+//     event.stopPropagation();
+//     envoiFormulaire();
+// });
