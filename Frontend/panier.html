@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="css/style.css" rel="stylesheet">
-    <!-- <link rel="stylesheet" href="../css/all.css"> -->
     <title>titre</title>
 </head>
 
@@ -14,10 +13,12 @@
     <header class="bg-dark">
         <div class="container">
             <div class="row">
+                <!-- logo -->
                 <div class="col-8">
                     <a href="index.html"><img class="my-2" width="150" src="img/logo1.png" alt="logo de OrgExpo"></a>
                 </div>
 
+                <!-- barre de navigation -->
                 <nav class="col-4 navbar navbar-expand-md navbar-dark">
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent">
                         <span class="navbar-toggler-icon"></span>
@@ -43,9 +44,12 @@
             <a class="btn btn-secondary my-3" href="index.html">Continuer mes achats</a>
         </div>
         <div class="row d-none" id="emptyPanier">
+            <!-- apparait si le panier est vide -->
             <p class="h2">Votre panier est vide !</p>
         </div>
+
         <div class="row" id="filledPanier">
+            <!-- aparrait si le panier est rempli -->
             <div class="col-12 col-lg-7">
                 <h2 class="row">Panier</h2>
                 <table class="table">
@@ -57,13 +61,16 @@
                             <th scope="col">Prix Total</th>
                         </tr>
                     </thead>
+
                     <tbody id="panier">
+                        <!-- contient les éléments du panier ajoutés en js -->
                     </tbody>
+
                     <tr>
                         <td></td>
                         <td></td>
                         <td></td>
-                        <td class="table-active font-weight-bold" id="totalPrice"></td>
+                        <td class="table-active font-weight-bold" id="totalPrice"></td> <!-- ligne pour l'ajout du prix total -->
                     </tr>
                 </table>
                 <div class="row">
@@ -71,47 +78,47 @@
                 </div>
             </div>
             <div class="col-12 col-lg-5">
+                <!-- apparait si une erreur survient lors de la commande -->
                 <div class="alert alert-danger d-none" role="alert" id="echec">
                     Impossible de passer le commande, réessayez plus tard !
                 </div>
+
                 <h2>Formulaire de commande</h2>
+                <!-- formulaire de commande, contient les types et regex pour la validation du formulaire -->
                 <form action="" method="post" class="needs-validation" novalidate id="form">
                     <div class="form-group">
                         <label for="firstName">Prénom</label>
-                        <input id="firstName" class="form-control" type="text" name="firstName" required
-                            pattern="[A-Za-z\- éèêïàô]{2,}">
+                        <input id="firstName" class="form-control" type="text" name="firstName" required pattern="[^\s][A-Za-z\- éèêïàô]+[^\s$]">
                         <div class="invalid-feedback">
                             Veuillez renseigner votre prénom
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="lastName">Nom</label>
-                        <input id="lastName" class="form-control" type="text" name="lastName" required
-                            pattern="[A-Za-z\- 'éèêïàô]{2,}">
+                        <input id="lastName" class="form-control" type="text" name="lastName" required pattern="[^\s][A-Za-z\- 'éèêïàô]+[^\s$]">
                         <div class="invalid-feedback">
                             Veuillez renseigner votre nom
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="address">Adresse</label>
-                        <input id="address" class="form-control" type="text" name="address" required
-                            pattern="[0-9A-Za-z\- 'éèêïàô]{2,}">
+                        <input id="address" class="form-control" type="text" name="address" required pattern="[^\s][0-9A-Za-z\- 'éèêïàô]+[^\s$]">
+                        <small class="form-text text-muted">Numéro, type de voie (route, rue, boulevard, etc.), nom de la voie <br>exemple : 11 rue Robert Dupont</small>
                         <div class="invalid-feedback">
                             Veuillez renseigner votre adresse
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="city">Ville</label>
-                        <input id="city" class="form-control" type="text" name="city" required
-                            pattern="[A-Za-z\- 'éèêïàô]{2,}">
+                        <input id="city" class="form-control" type="text" name="city" required pattern="[^\s][A-Za-z\- 'éèêïàô]+[^\s$]">
                         <div class="invalid-feedback">
                             Veuillez renseigner votre ville
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="email">Adresse e-mail</label>
-                        <input id="email" class="form-control" type="email" name="email" required
-                            pattern="[a-z0-9._-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+                        <input id="email" class="form-control" type="email" name="email" required pattern="[^\s][a-z0-9._-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+                        <small class="form-text text-muted">exemples : roger.dupont@free.fr, roger.dupont@gmail.com</small>
                         <div class="invalid-feedback">
                             Veuillez renseigner une adresse e-mail valide
                         </div>
@@ -123,6 +130,7 @@
         </div>
     </div>
 
+    <!-- footer -->
     <footer class="bg-dark">
         <div class="container py-4">
             <div class="row">

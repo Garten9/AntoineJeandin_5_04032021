@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="css/style.css" rel="stylesheet">
-    <!-- <link rel="stylesheet" href="../css/all.css"> -->
     <title>titre</title>
 </head>
 
@@ -14,10 +13,12 @@
     <header class="bg-dark">
         <div class="container">
             <div class="row">
+                <!-- logo -->
                 <div class="col-8">
                     <a href="index.html"><img class="my-2" width="150" src="img/logo1.png" alt="logo de OrgExpo"></a>
                 </div>
 
+                <!-- barre de navigation -->
                 <nav class="col-4 navbar navbar-expand-md navbar-dark">
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent">
                         <span class="navbar-toggler-icon"></span>
@@ -36,14 +37,16 @@
                 </nav>
             </div>
         </div>
-
     </header>
 
     <div class="container">
         <div class="row">
             <a class="btn btn-secondary my-3" href="index.html">Retour aux produits</a>
         </div>
+
+
         <div class="row mt-3" id="produit">
+            <!-- contient les éléments du produit, ils seront ajoutés en js -->
             <img class="col col-lg-5" id="teddyImg" src="" alt="">
             <div class="col col-lg-7">
                 <div class="row">
@@ -65,11 +68,14 @@
             </div>
         </div>
         <div class="row">
+            <!-- apparait lorsque le produit a été ajouté au panier -->
             <div class="col-sm-4 offset-5 alert alert-success my-2 d-none" id="alert" role="alert">
                 <p class="m-0">Ce produit a été ajouté au <a href="panier.html" class="alert-link"> panier</a>.</p>
             </div>
         </div>
     </div>
+
+    <!-- footer -->
     <footer class="bg-dark">
         <div class="container py-4">
             <div class="row">

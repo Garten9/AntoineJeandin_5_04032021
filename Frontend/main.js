@@ -1,5 +1,7 @@
 updatePanier();
-function updatePanier(){
+
+// permet d'afficher la quantité d'items présent dans le panier à coté du lien "panier" de la barre de navigation, utilisé sur chaque page
+function updatePanier(){ 
     let i = 0;
     let quantity = 0;
     while (localStorage.key(i)) {
@@ -9,7 +11,8 @@ function updatePanier(){
     document.querySelector('#quantityPanier').textContent = quantity;
 }
 
-const getProduit = (idTeddy) => {
+// permet de récupérer un produit en prenant l'id du produit en parametre
+const getProduit = (idTeddy) => { 
     return new Promise((resolve, reject) => {
         var request = new XMLHttpRequest();
         request.onload = function () {
@@ -24,7 +27,8 @@ const getProduit = (idTeddy) => {
     });
 };
 
-const getProduits = () => {
+// permet de récupérer tous les produits
+const getProduits = () => {  
     return new Promise((resolve, reject) => {
         var request = new XMLHttpRequest();
         request.onload = function () {
